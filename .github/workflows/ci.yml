@@ -22,6 +22,7 @@ jobs:
         image: postgres
         # Provide the password for postgres
         env:
+          POSTGRES_PASSWORD: postgres
           CI: true
           PGHOST_TEST: ${{ secrets.PGHOST_TEST }}
           PGUSER_TEST: ${{ secrets.PGUSER_TEST }}
