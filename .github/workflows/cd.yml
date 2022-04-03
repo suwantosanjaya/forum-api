@@ -28,7 +28,7 @@ jobs:
         npm run start
       env:
         PGHOST: ec2-54-173-77-184.compute-1.amazonaws.com
-        PGUSER: pemwnkzzbltwai
-        PGDATABASE: des8df3jsmp3m6
-        PGPASSWORD: f645a4bf153efe67fc7465aa3620489b85d73e6de759a60e48338909156f0340
+        PGUSER: dcdmwpxzrdnise
+        PGDATABASE: dbe0pv29niksjt
+        PGPASSWORD: b9a5dee0aa48eb5d63d93df7038094037082f3ffdd6ecdf4fc6a208f8d263c58
         PGPORT: 5432
