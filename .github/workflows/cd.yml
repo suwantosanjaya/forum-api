@@ -21,16 +21,3 @@ jobs:
         printf "release: npx node-pg-migrate up\nweb: npm start" > Procfile
     - name: Deploy backend to Heroku
       run: git push heroku main:refs/heads/main --force
-
-      # uses: appleboy/ssh-action@master
-      # with:
-      #   host: ${{ secrets.SSH_HOST }}
-      #   username: ${{ secrets.SSH_USERNAME }}
-      #   key: ${{ secrets.SSH_KEY }}
-      #   port: ${{ secrets.SSH_PORT }}
-      #   script: |
-      #     cd ~/forum-api
-      #     git pull origin master
-      #     npm install
-      #     npm run migrate up
-      #     pm2 restart auth-api
