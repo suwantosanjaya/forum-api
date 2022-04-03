@@ -26,3 +26,9 @@ jobs:
         npm install
         npm run migrate up
         npm run start
+      env:
+        PGHOST: ec2-54-173-77-184.compute-1.amazonaws.com
+        PGUSER: pemwnkzzbltwai
+        PGDATABASE: des8df3jsmp3m6
+        PGPASSWORD: f645a4bf153efe67fc7465aa3620489b85d73e6de759a60e48338909156f0340
+        PGPORT: 5432
