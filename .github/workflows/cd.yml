@@ -17,4 +17,4 @@ jobs:
         git config user.email "suwantosanjaya@uin-suska.ac.id"
     - uses: actions/checkout@v3
     - name: Deploy backend to Heroku
-      run: git push heroku main:refs/heads/main --force
+      run: git push heroku master
