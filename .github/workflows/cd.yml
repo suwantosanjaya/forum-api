@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: akhileshns/heroku-deploy@v3.12.12 
-        with:
-          heroku_api_key: "115f4d4a-4e10-496c-92a4-f8af7293068b"
-          heroku_app_name: "forum-api-v2" 
-          heroku_email: "suwantosanjaya@uin-suska.ac.id"
+      with:
+        heroku_api_key: "115f4d4a-4e10-496c-92a4-f8af7293068b"
+        heroku_app_name: "forum-api-v2" 
+        heroku_email: "suwantosanjaya@uin-suska.ac.id"
