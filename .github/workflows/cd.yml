@@ -15,6 +15,9 @@ jobs:
       run: |
         git config user.name "suwantosanjaya"
         git config user.email "suwantosanjaya@uin-suska.ac.id"
+        git fetch --prune --unshallow
+        git remote add heroku https://heroku:115f4d4a-4e10-496c-92a4-f8af7293068b@git.heroku.com/forum-api-v2.git
+        printf "release: npx node-pg-migrate up\nweb: bin/start-nginx npm start" > Procfile
     - uses: actions/checkout@v3
     - name: Deploy backend to Heroku
       run: git push heroku master
