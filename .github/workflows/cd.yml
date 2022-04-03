@@ -16,3 +16,13 @@ jobs:
         heroku_api_key: "115f4d4a-4e10-496c-92a4-f8af7293068b"
         heroku_app_name: "forum-api-v2" 
         heroku_email: "suwantosanjaya@uin-suska.ac.id"
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install migrate and test
+      run: |
+        npm install
+        npm run migrate up
+        npm run start
