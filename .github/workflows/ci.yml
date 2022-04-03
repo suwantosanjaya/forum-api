@@ -22,7 +22,7 @@ jobs:
         image: postgres
         # Provide the password for postgres
         env:
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: ${{ secrets.PGPASSWORD }}
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -31,7 +31,7 @@ jobs:
           --health-retries 5
         ports:
           # Maps tcp port 5432 on service container to the host
-          - 5432:5432
+          - 5432:${{ secrets.POSTGRES_PORT }}
 
     steps:
     - uses: actions/checkout@v3
@@ -45,18 +45,18 @@ jobs:
         npm run migrate up
         npm run test
       env:
-        POSTGRES_HOST: localhost
-        POSTGRES_PORT: 5432
-        PGHOST_TEST: localhost
-        PGUSER_TEST: postgres
-        PGDATABASE_TEST: postgres
-        PGPASSWORD_TEST: postgres
-        PGPORT_TEST: 5432
-        PGHOST: localhost
-        PGUSER: postgres
-        PGDATABASE: postgres
-        PGPASSWORD: postgres
-        PGPORT: 5432
-        ACCESS_TOKEN_KEY: 8b7b4ef375716ab08b2a3951b29d52fc00b1c855f9d1a847229b8c5935bef56d9d271e76a9cf08e614300395c3b90ebe559cf968a0741b18c9505549394b2c70
-        REFRESH_TOKEN_KEY: 5078605e074a462b1460608fcbe0d0963c644402e04ad334455ff5a856cb43fd99825861dde02957d5e3184c90c532ca7d0249df20fe93d535632f3d11be7bad
-        ACCCESS_TOKEN_AGE: 3000
+        POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
+        POSTGRES_PORT: ${{ secrets.POSTGRES_PORT }}
+        PGHOST_TEST: ${{ secrets.PGHOST_TEST }}
+        PGUSER_TEST: ${{ secrets.PGUSER_TEST }}
+        PGDATABASE_TEST: ${{ secrets.PGDATABASE_TEST }}
+        PGPASSWORD_TEST: ${{ secrets.PGPASSWORD_TEST }}
+        PGPORT_TEST: ${{ secrets.PGPORT_TEST }}
+        PGHOST: ${{ secrets.PGHOST }}
+        PGUSER: ${{ secrets.PGUSER }}
+        PGDATABASE: ${{ secrets.PGDATABASE }}
+        PGPASSWORD: ${{ secrets.PGPASSWORD }}
+        PGPORT: ${{ secrets.PGPORT }}
+        ACCESS_TOKEN_KEY: ${{ secrets.ACCESS_TOKEN_KEY }}
+        REFRESH_TOKEN_KEY: ${{ secrets.REFRESH_TOKEN_KEY }}
+        ACCCESS_TOKEN_AGE: ${{ secrets.ACCCESS_TOKEN_AGE }}
