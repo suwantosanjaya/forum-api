@@ -20,4 +20,4 @@ jobs:
         printf "release: npx node-pg-migrate up\nweb: bin/start-nginx npm start" > Procfile
     - uses: actions/checkout@v3
     - name: Deploy backend to Heroku
-      run: git push heroku master:refs/heads/master --force
+      run: git push heroku master --force
