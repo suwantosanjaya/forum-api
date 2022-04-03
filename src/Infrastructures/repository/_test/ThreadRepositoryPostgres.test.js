@@ -64,7 +64,7 @@ describe('ThreadRepositoryPostgres', () => {
 
       // Action & Assert
       await expect(
-        threadRepositoryPostgres.verifyThreadAvailbility('thread-1234'),
+        threadRepositoryPostgres.verifyThreadAvailbility('thread-12345'),
       ).resolves.toEqual(
         {
           id: thread.id,
