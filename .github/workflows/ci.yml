@@ -31,7 +31,7 @@ jobs:
           --health-retries 5
         ports:
           # Maps tcp port 5432 on service container to the host
-          - 5432:${{ secrets.POSTGRES_PORT }}
+          - 5432:5432
 
     steps:
     - uses: actions/checkout@v3
@@ -60,4 +60,3 @@ jobs:
         ACCESS_TOKEN_KEY: ${{ secrets.ACCESS_TOKEN_KEY }}
         REFRESH_TOKEN_KEY: ${{ secrets.REFRESH_TOKEN_KEY }}
         ACCCESS_TOKEN_AGE: ${{ secrets.ACCCESS_TOKEN_AGE }}
-        
