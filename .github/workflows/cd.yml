@@ -37,4 +37,3 @@ jobs:
         PGDATABASE_TEST: dbe0pv29niksjt
         PGPASSWORD_TEST: b9a5dee0aa48eb5d63d93df7038094037082f3ffdd6ecdf4fc6a208f8d263c58
         PGPORT_TEST: 5432
-        PGSSLMODE: require
