@@ -8,6 +8,10 @@ const testConfig = {
   password: process.env.PGPASSWORD_TEST,
   database: process.env.PGDATABASE_TEST,
   ssl: true,
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: { require: true },
+  },
 };
 
 const config = {
@@ -17,6 +21,10 @@ const config = {
   password: process.env.PGPASSWORD,
   database: process.env.PGDATABASE,
   ssl: true,
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: { require: true },
+  },
 };
 
 const pool = process.env.NODE_ENV === 'test' ? new Pool(testConfig) : new Pool(config);
