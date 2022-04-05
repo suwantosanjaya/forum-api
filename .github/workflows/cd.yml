@@ -24,9 +24,9 @@ jobs:
     - name: npm install migrate and start
       run: |
         npm install
-        npm run migrate up
         curl https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem > config/amazon-rds-ca-cert.pem
         git add -A && git commit -m "Added Amazon RDS CA Certificate"
+        npm run migrate up
         npm run start
       env:
         PGHOST: ec2-54-173-77-184.compute-1.amazonaws.com
