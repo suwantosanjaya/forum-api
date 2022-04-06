@@ -14,7 +14,7 @@ const routes = (handler) => ([
   },
   {
     method: 'GET',
-    path: '/threads/{threadId}',
+    path: '/',
     handler: () => ({
       value: 'Hello Dicoding!',
     }),
