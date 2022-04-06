@@ -24,7 +24,6 @@ jobs:
     - name: npm install migrate and start
       run: |
         npm install
-        npm run migrate up
         npm run start
       env:
         PGHOST: ec2-54-173-77-184.compute-1.amazonaws.com
