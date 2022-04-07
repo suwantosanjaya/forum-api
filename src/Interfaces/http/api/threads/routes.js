@@ -16,7 +16,7 @@ const routes = (handler) => ([
     method: 'GET',
     path: '/',
     handler: () => ({
-      value: 'Hello Dicoding!',
+      value: 'Hello Dicoding, My name is Suwanto Sanjaya',
     }),
   },
 ]);
