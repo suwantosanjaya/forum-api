@@ -1,5 +1,6 @@
 node_modules
 package-lock.json
 .env
+forum-api-app-server.pem
 config/database/test.json
 coverage
