@@ -6,6 +6,20 @@ const UsersTableTestHelper = require('../../../../tests/UsersTableTestHelper');
 const ThreadsTableTestHelper = require('../../../../tests/ThreadsTableTestHelper');
 const AuthenticationsTableTestHelper = require('../../../../tests/AuthenticationsTableTestHelper');
 
+describe('/ endpoint', () => {
+  it('should response 201 and persisted thread', async () => {
+    const server = await createServer(container);
+    const response = await server.inject({
+      method: 'GET',
+      url: '/',
+    });
+
+    const responseJson = JSON.parse(response.payload);
+    expect(response.statusCode).toEqual(200);
+    expect(responseJson.value).toEqual('Hello Dicoding, My name is Suwanto Sanjaya');
+  });
+});
+
 describe('/threads endpoint', () => {
   let server = null;
   let accessToken = null;
