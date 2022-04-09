@@ -1,12 +1,13 @@
 class UserLogin {
   constructor(payload) {
-    this._verifyPayload(payload);
+    this.verifyPayload(payload);
 
     this.username = payload.username;
     this.password = payload.password;
   }
 
-  _verifyPayload(payload) {
+  // eslint-disable-next-line class-methods-use-this
+  verifyPayload(payload) {
     const { username, password } = payload;
 
     if (!username || !password) {
