@@ -1,6 +1,6 @@
 class RegisteredUser {
   constructor(payload) {
-    this._verifyPayload(payload);
+    this.verifyPayload(payload);
 
     const { id, username, fullname } = payload;
 
@@ -9,7 +9,8 @@ class RegisteredUser {
     this.fullname = fullname;
   }
 
-  _verifyPayload({ id, username, fullname }) {
+  // eslint-disable-next-line class-methods-use-this
+  verifyPayload({ id, username, fullname }) {
     if (!id || !username || !fullname) {
       throw new Error('REGISTERED_USER.NOT_CONTAIN_NEEDED_PROPERTY');
     }
